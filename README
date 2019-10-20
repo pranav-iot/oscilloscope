@@ -1,0 +1,23 @@
+VDD – 3.3v (Pin 1)
+GND – GND (Pin 9)
+SDA – SDA (Pin 3)
+SCL – SCL (Pin 5)
+
+Step 1: Enable Raspberry Pi I2C interface To enable the I2C, from the terminal, run
+	sudo raspi-config 
+When the configuration panels open, select interface options, select I2C and click enable. 
+Step 2: Update raspberry pi
+	sudo apt-get update
+	sudo apt-get upgrade
+Step 3: Install the Adafruit ADS1115 library for ADC
+	cd ~
+	sudo apt-get install build-essential python-dev python-smbus git
+	cd Adafruit_Python_ADS1x1z
+	sudo python setup.py install
+	cd examples
+	python simpletest.py
+Step 4: Install mathplotlib and drawnow
+	sudo apt-get install python3-matplotlib
+	sudo python3 -m pip install drawnow
+Step 5: Run the oscilloscope script
+	sudo python3 scope.py
